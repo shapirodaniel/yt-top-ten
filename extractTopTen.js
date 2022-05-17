@@ -32,12 +32,7 @@ function extractTopTenSongs(data) {
 	for (const key in songFrequencyMap) {
 		const entry = songFrequencyMap[key];
 
-		if (!result.length) {
-			result.push(entry);
-			continue;
-		}
-
-		if (entry.seen > result[result.length - 1].seen && result.length < 10) {
+		if (result.length < 10) {
 			result.push(entry);
 			sortResults(result);
 			continue;
